@@ -1,0 +1,69 @@
+<ion-content>
+
+  <!-- header -->
+  <ion-list class="header">
+     <ion-item lines="none">
+      
+      <div slot="start" class="back-button" (click)="go_back()">
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+      </div>
+
+        
+      <p class="text ion-text-center"><b>Beach Party</b></p>
+   
+
+     </ion-item>    
+  </ion-list>
+
+  <!-- segment change  -->
+  <ion-segment [(ngModel)]="selectTabs" mode="ios" value="going">
+    <ion-segment-button value="going">
+      <ion-label>Going</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="may_be_going">
+      <ion-label>May be going</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+  <!-- canidates going -->
+
+  <ion-row *ngIf=" selectTabs == 'going'">
+    <ion-col size="12" *ngFor="let data of Going" (click)="show_chat(data)">
+
+      <div class="user_img">
+        <img class="userimg" src="{{this.data.img}}" alt="">
+      </div>
+
+      <div class="m-2">
+        <p class="title m-1"><b>{{this.data.name}}</b></p>
+      </div>
+    </ion-col>
+
+  <div *ngIf="this.Going == 0">
+    <h3 class="bold_lbl">There is no activity here.</h3>
+  </div>
+
+  </ion-row>
+
+
+  <!-- canidates may be going  -->
+
+  
+  <ion-row *ngIf=" selectTabs == 'may_be_going' ">
+    <ion-col size="12" *ngFor="let data of MaybeGoing" (click)="show_chat(data)">
+
+      <div class="user_img">
+        <img class="userimg" src="{{this.data.img}}" alt="">
+      </div>
+
+      <div class="m-2">
+        <p class="title m-1"><b>{{this.data.name}}</b></p>
+      </div>
+    </ion-col>
+    <div *ngIf="this.MaybeGoing == 0">
+      <h3 class="bold_lbl">There is no activity here.</h3>
+    </div>
+  </ion-row>
+
+</ion-content>

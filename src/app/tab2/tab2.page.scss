@@ -1,0 +1,143 @@
+// Requests
+ion-header {
+  padding: 10px;
+  background-color: var(--ion-color-primary);
+  height: 130px;
+  text-align: center;
+  h2 {
+    font-weight: 600;
+    color: white;
+  }
+  ion-card {
+    box-shadow: none;
+    margin: 13px 20px;
+  }
+}
+ion-toolbar {
+  --border-width: 0 0 0px;
+  --background: var(--ion-color-primary);
+  text-align: center;
+  color: white;
+  ion-title {
+    font-size: 20px;
+  }
+  ion-buttons {
+    ion-back-button {
+      color: white;
+    }
+  }
+}
+.header-md::after {
+  left: 0;
+  bottom: -5px;
+  background-position: left 0 top -2px;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-image: none !important;
+  background-repeat: repeat-x;
+  content: "";
+}
+.header-ios ion-toolbar:last-of-type {
+  --border-width: 0 0 0px;
+}
+ion-segment {
+  ion-segment-button {
+    color: white;
+    font-size: 14px;
+  }
+}
+ion-content {
+  --background: var(--ion-color-light-tint);
+  ion-item {
+    --background: var(--ion-color-light-tint);
+  }
+}
+.blood-row {
+  ion-card {
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    padding: 12px;
+    box-shadow: none;
+    border: 1px solid var(--ion-color-light-shade);
+    border-radius: 10px;
+    margin: 5px;
+  }
+  ion-card:hover {
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    padding: 12px;
+    box-shadow: none;
+    border: 1px solid var(--ion-color-light-shade);
+    border-radius: 10px;
+    margin: 5px;
+    --background: var(--ion-color-light-tint);
+  }
+  ion-icon {
+    font-size: 40px;
+    color: var(--ion-color-primary);
+  }
+}
+.request-card {
+  box-shadow: none;
+  --background: white;
+  border-radius: 10px;
+  border: 1px solid var(--ion-color-light-shade);
+  padding: 25px;
+  height: 90px;
+  ion-card-title {
+    font-size: 17px;
+  }
+  .required-blood {
+    margin: 0px;
+    padding: 0px;
+    color: var(--ion-color-primary);
+  }
+  ion-chip {
+    float: right;
+    border-radius: 5px;
+  }
+}
+.request-card:hover {
+  box-shadow: none;
+  --background: var(--ion-color-light-tint);
+  border-radius: 10px;
+  border: 1px solid var(--ion-color-light-shade);
+  padding: 25px;
+  height: 90px;
+  .required-blood {
+    margin: 0px;
+    padding: 0px;
+    color: var(--ion-color-primary);
+  }
+  ion-chip {
+    float: right;
+    border-radius: 5px;
+  }
+}
+
+// Donor Card
+.donors-list {
+  background-color: #efdde8;
+  border-radius: 10px;
+  margin: 10px;
+  ion-item {
+    --background: #efdde8;
+    ion-thumbnail {
+      width: 70px;
+      height: 70px;
+    }
+    color: var(--ion-color-primary);
+    ion-label {
+      color: var(--ion-color-primary);
+    }
+    ion-button {
+      font-size: 10px;
+      ion-icon {
+        font-size: 25px;
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+ion-header {
+  padding: 10px;
+  background-color: var(--ion-color-primary);
+  height: 130px;
+  ion-card {
+    box-shadow: none;
+    margin: 13px 20px;
+    height: 50px;
+    border-radius: 50px;
+  }
+}
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  text-align: center;
+  color: white;
+  ion-title {
+    font-size: 20px;
+  }
+  ion-buttons {
+    ion-back-button {
+      color: white;
+    }
+  }
+}
+ion-input {
+  margin: 5px;
+  background-color: white;
+}
+.header-md::after {
+  left: 0;
+  bottom: -5px;
+  background-position: left 0 top -2px;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-image: none !important;
+  background-repeat: repeat-x;
+  content: "";
+}
+ion-row {
+  text-align: center;
+  margin-top: 10px;
+  overflow: auto;
+}
+ion-col {
+  border: 1px solid var(--ion-color-primary);
+  margin: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  background: var(--ion-color-primary);
+  color: white;
+  font-size: 14px;
+  padding-top: 11px;
+  text-align: center;
+}
+ion-col:hover {
+  border: 1px solid var(--ion-color-primary);
+  margin: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  background: var(--ion-color-primary-tint);
+  color: white;
+  font-size: 14px;
+  padding-top: 11px;
+  text-align: center;
+}
+.donors-list {
+  background-color: #efdde8;
+  border-radius: 10px;
+  margin: 10px;
+  ion-item {
+    --background: #efdde8;
+    ion-thumbnail {
+      width: 70px;
+      height: 70px;
+    }
+    color: var(--ion-color-primary);
+    ion-label {
+      color: var(--ion-color-primary);
+    }
+    ion-button {
+      font-size: 10px;
+      ion-icon {
+        font-size: 25px;
+      }
+    }
+  }
+}

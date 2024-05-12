@@ -1,0 +1,33 @@
+<ion-header class="center">
+  <ion-toolbar mode="md">
+    <ion-segment value="requests" (ionChange)="changeMapType($event)">
+      <ion-segment-button value="requests">
+        <ion-label>All Requests</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="donos">
+        <ion-label>All Donors</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <capacitor-google-map id="map"></capacitor-google-map> -->
+  <!-- <capacitor-google-map id="map"></capacitor-google-map> -->
+  <!-- <div id="requestMap" #requestMap></div> -->
+
+  <!-- <ion-button class="selector" mode="ios" expand="block" color="primary">
+    <ion-select [(ngModel)]="bloodGroup" (ionChange)="selectBlood($event)" mode="ios" aria-label="Select Blood" interface="action-sheet" placeholder="Select Blood">
+      <ion-select-option value="All">All Blood</ion-select-option>
+      <ion-select-option *ngFor="let blood of blood_group" [value]="blood.type">{{blood.type}}</ion-select-option>
+    </ion-select>
+  </ion-button> -->
+  <app-google-map *ngIf="mapType == 'requests'" [uid]="this.uid" [bloodGroup]="bloodGroup" (markerClick)="openModal($event)"
+    [mapType]="mapType"></app-google-map>
+  <app-google-map *ngIf="mapType == 'donos'" [bloodGroup]="bloodGroup" [uid]="this.uid" (markerClick)="openModal($event)"
+    [mapType]="mapType"></app-google-map>
+  <!-- <app-google-map *ngIf="mapType == 'custom-requests'" [bloodGroup]="bloodGroup" [uid]="this.uid" (markerClick)="openModal($event)"
+    [mapType]="mapType"></app-google-map>
+  <app-google-map *ngIf="mapType == 'custom-donos'" [bloodGroup]="bloodGroup" [uid]="this.uid" (markerClick)="openModal($event)"
+    [mapType]="mapType"></app-google-map> -->
+</ion-content>

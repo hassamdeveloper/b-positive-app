@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border">
+  <ion-item lines="none" class="ion-text-center">
+
+    <div slot="start" class="back-button" (click)="nav_back()">
+      <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+    </div>
+    <!-- Activtiy title -->
+    <p class="txt">{{data.activity_name}}</p>
+
+    <ion-icon slot="end" name="heart-outline"></ion-icon>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col size="12" size-md="12" size-lg="6" class="col">
+      <!-- location image  -->
+       
+        <img class="image" src="{{data.a_image}}" alt="">
+ 
+
+      <ion-item lines="none" class="fs-0">
+        <div slot="start" class="algin_left">
+
+          <ion-icon name="location-outline" size="large"></ion-icon>
+
+          <!-- activity location -->
+          <p> {{data.location}}</p>
+
+        </div>
+        <!-- Avtivity range -->
+        <div slot="end">
+          <p> Within {{data.social_range}} Km</p>
+        </div>
+      </ion-item>
+
+
+    </ion-col>
+    <ion-col size="12" size-md="12" size-lg="6" class="center">
+
+      <div class="div2">
+        <!-- activity description -->
+        <p class="para">
+          {{data.description}}
+        </p>
+        <!-- attendies title -->
+        <p><b>Number Of Atendees Allowed</b></p>
+        <!-- canidaties nunber -->
+        <h5><b>{{data.max_atendes}} </b></h5>
+        <ion-row>
+          <ion-col size="6" class="div3">Start Time</ion-col>
+          <ion-col size="6" class="div3">End Time</ion-col>
+        </ion-row>
+        <ion-row>
+
+          <!-- Activity Start time  -->
+          <ion-col size="6" class="coltime">
+            <div class="div4">
+                {{data.start_time}}
+            </div>
+            <div class="div4">00</div>
+          </ion-col>
+          <!-- Activity end time  -->
+          <ion-col size="6" class="coltime">
+            <div class="div4">{{data.end_time}}</div>
+            <div class="div4">00</div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>

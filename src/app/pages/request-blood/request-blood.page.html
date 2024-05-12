@@ -1,0 +1,138 @@
+<ion-header class="center">
+  <ion-buttons>
+    <ion-back-button color="light"><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+  </ion-buttons>
+  <ion-toolbar mode="md">
+    <ion-title>Create Donation Campaign</ion-title>
+    
+  </ion-toolbar>
+  <!-- <h2>Create Donation Campaign</h2> -->
+</ion-header>
+<ion-content class="ion-padding">
+  <!-- <ion-avatar class="avatar">
+    <img src="assets/blood-donor.png" id="cameraImage" alt="" />
+    <ion-buttons mode="ios">
+      <ion-button (click)="capture_img()">
+        <ion-icon class="" name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-avatar> -->
+  <!-- Name -->
+  <!-- <ion-row style="background-color: #f8f8f8; border-radius: 12px">
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="book"></ion-icon>
+    </ion-col>
+    <ion-col class="input-col" size="10">
+      <ion-input placeholder="Title" [(ngModel)]="compaign.description"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row style="background-color: #f8f8f8; border-radius: 12px">
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="warning"></ion-icon>
+    </ion-col>
+    <ion-col class="input-col" size="10">
+      <ion-select
+        mode="ios"
+        interface="action-sheet"
+        placeholder="Select Emergency"
+        [(ngModel)]="compaign.status"
+      >
+        <ion-select-option value="urgent">Urgent</ion-select-option>
+        <ion-select-option value="emergency">Emergency</ion-select-option>
+        <ion-select-option value="normal">Normal</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row> -->
+  <ion-row>
+    <ion-col  class="icon-col" size="2">
+      <ion-icon name="locate"></ion-icon>
+    </ion-col>
+    <ion-col class="input-col" size="8">
+      <p class="choose-location">{{location}}</p></ion-col>
+      <ion-col size="2" style="padding-top: 10px;">
+        <ion-buttons
+      style="height: 40px;
+    padding: 0;
+    margin: 0px;
+    width: 40px;
+    position: absolute;
+    right: 10px;"
+      expand="block"      
+      ><ion-button (click)="openModal()"><ion-icon style="font-size: 20px;" name="navigate"></ion-icon></ion-button></ion-buttons>
+      </ion-col>
+    
+  </ion-row>
+  <ion-row style="background-color: #f8f8f8; border-radius: 12px">
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="water"></ion-icon>
+    </ion-col>
+    <ion-col class="input-col" size="10">
+      <ion-select
+        mode="ios"
+        interface="action-sheet"
+        placeholder="Blood Group"
+        [(ngModel)]="compaign.blood_type"
+      >
+        <ion-select-option
+          value="{{group.type}}"
+          *ngFor="let group of blood_group"
+          >{{group.type}}</ion-select-option
+        >
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-row style="background-color: #f8f8f8; border-radius: 12px">
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="location"></ion-icon>
+    </ion-col>
+    <ion-col (click)="open()" style="padding: none" class="input-col" size="10">
+      <ion-select
+        class="select-city"
+        disabled="true"
+        mode="ios"
+        interface="action-sheet"
+        placeholder="{{selectedCity}}"
+      >
+        <ion-select-option>Pakpattan</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-button
+    [disabled]="
+      compaign.description == ''||
+      compaign.location == ''||
+      compaign.status== ''||
+      compaign.status ==  ''||
+      compaign.city== ''"
+    (click)="submit_request()"
+    expand="block"
+    mode="ios"
+    >Submit</ion-button
+  >
+  <!-- Modal -->
+  <ion-modal (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Select City</ion-title>
+        </ion-toolbar>
+        <ion-searchbar
+          [debounce]="1000"
+          [(ngModel)]="search"
+          class="search"
+          placeholder="Search City"
+        ></ion-searchbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item *ngFor="let city of cities | filter:search">
+          <ion-label class="ion-text-wrap" for="terms">{{city.name}}</ion-label>
+          <ion-checkbox
+            mode="ios"
+            id="terms"
+            (ionChange)="onTermsChanged(city)"
+          ></ion-checkbox>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

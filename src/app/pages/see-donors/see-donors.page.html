@@ -1,0 +1,37 @@
+<ion-header class="center">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+    </ion-buttons>
+    <ion-title>See Donor</ion-title>
+  </ion-toolbar>
+  <ion-card>
+    <ion-input placeholder="Search Donor" [(ngModel)]="search"></ion-input>
+  </ion-card>
+</ion-header>
+
+<ion-content>
+  <ion-row scrollX="true" class="scroll-items">
+    <ion-col (click)="filterByBloodType(group)" *ngFor="let group of blood_group">{{group.type}}</ion-col>
+  </ion-row>
+  <ion-list class="donors-list" *ngFor="let donor of donors | filter:search">
+    <ion-item lines="none">
+      <ion-thumbnail slot="start">
+        <img src="{{donor.p_img}}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{donor.name}} <span *ngIf="donor.u_id ==uid">(You)</span></h2>
+        <p>Adress: {{donor.location}}</p>
+        <h3>Blood Type: {{donor.blood_type}}</h3>
+      </ion-label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon name="location-outline"></ion-icon>
+        </ion-button>
+        <ion-button *ngIf="donor.u_id !==uid">
+          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,448 @@
+// ion-header {
+
+//     ion-toolbar {
+
+//         .head_align {
+//             display: flex;
+//             justify-content: space-between;
+
+//             .head_align_left {
+//                 margin-left: 10px;
+//                 // display: flex;
+//                 // justify-content: space-around;
+//                 // width: 187px;
+//                 // align-items: center
+//             }
+
+//             .head_align_right {
+//                 width: 100px;
+//                 display: flex;
+//                 justify-content: space-around;
+//                 align-items: center;
+//             }
+
+//         }
+//     }
+// }
+
+// .my_class1{
+//    --background: none;
+//    --ion-background-color: none;
+//  }
+// .my_class2{
+//    --background: white;
+//    --ion-background-color: white;
+//    background-color: white;
+//  }
+
+// ion-segment {
+//     width: 184px;
+//     height: 40px;
+//     display: flex;
+//     border-radius: 100px;
+//     background: white;
+//     box-shadow: 0px 0px 12px -6px rgb(0 0 0 / 66%);
+//     -moz-box-shadow: 0px 0px 12px -6px rgba(0, 0, 0, 0.66);
+//     margin: 0 auto;
+//     position: absolute;
+//     top: 17px;
+//     left: 70px;
+//     right: 70px;
+//     z-index: 1;
+//     background-color: white;
+
+//     ion-segment-button {
+//         --border-radius: 100px;
+//         --indicator-color: #F2910C;
+//         --color-checked: white;
+
+//     }
+// }
+
+// ion-list {
+//     width: 100%;
+//     height: 100%;
+//     padding: 0;
+// }
+// .map-container{
+//   background: none;
+//   --ion-background-color: none;
+// }
+
+// ion-row {
+//     width: 100%;
+//     display: flex;
+//     justify-content: center;
+//     position: absolute;
+//     top: 68px;
+//     padding: 5px;
+
+//     ion-col {
+//         max-width: 382px !important;
+//         min-height: 99px;
+//         display: flex;
+//         align-items: flex-start;
+//         align-content: space-between;
+//         justify-content: space-between;
+//         margin: 0px 5px 27px 5px;
+//         padding: 0;
+//         box-shadow: 2px 4px 5px #00000029;
+//         border-radius: 10px;
+
+//         .user_img {
+//             border: 2px solid #17A525;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             border-radius: 14px;
+//             padding: 1px;
+//             width: 50px;
+//             height: 50px;
+//             margin: 15px 0px 0px 5px;
+//             .userimg{
+//                 height: 100%;
+//                 width: 100%;
+//                 border-radius: 14px;
+//             }
+//         }
+
+//         .m-1 {
+//             margin: 3.5px 0px;
+//         }
+
+//         .m-2 {
+//             margin: 15px 0px 0px 5px;
+//         }
+
+//         .title {
+//             font-size: 13px;
+//         }
+//         .subtitle {
+//             font-size: 9px;
+//         }
+//         .short_des{
+//             width: 215px;
+//             white-space: nowrap;
+//             overflow: hidden;
+//             text-overflow: ellipsis;
+//         }
+//         .location_img {
+//             width: 86px;
+//             height: 99px;
+//             display: flex;
+
+//             .a{
+//                 height: 100%;
+//                 width: 100%;
+//                 object-fit: cover;
+//                 object-position: -5px 0px;
+//                 border-radius: 0px 10px 10px 0px;
+//             }
+//         }
+
+//     }
+
+// }
+
+// .icon {
+//     font-size: 22px;
+//     margin-right: 24px;
+// }
+
+// .img {
+//     width: 35px;
+//     height: 35px;
+//     border: 1px solid;
+//     padding: 2px;
+//     border-radius: 100%;
+// }
+// capacitor-google-maps::ng-deep {
+//     display: inline-block;
+//     width: 100%;
+//     height: 100%;
+//     div[class="gmnoprint"] {
+//         top: -200px;
+//     }
+//     button[draggable="false"] {
+//         height: 0px !important;
+//         width: 0px !important;
+//     }
+//     div[role="button"] {
+//         background-image: url("./../../assets/map-icon/markerTag.png");
+//         z-index: 10;
+//         background-size: 58px 72px;
+//         background-repeat: no-repeat;
+//         height: 118px !important;
+//         width: 300px !important;
+//     }
+//     div[role="button"].img {
+//         border-radius: 100%;
+//     }
+//     .gmnoprint {
+//         top: -518px;
+//     }
+// }
+// // Host
+// :host ::ng-deep capacitor-google-maps {
+//     display: inline-block;
+//     width: 100%;
+//     height: 100%;
+//     div[class="gmnoprint"] {
+//         top: -200px;
+//     }
+//     button[draggable="false"] {
+//         height: 0px !important;
+//         width: 0px !important;
+//     }
+//     div[role="button"] {
+//         background-image: url("./../../assets/map-icon/markerTag.png");
+//         z-index: 10;
+//         background-size: 58px 72px;
+//         background-repeat: no-repeat;
+//         height: 118px !important;
+//         width: 300px !important;
+//     }
+//     div[role="button"].img {
+//         border-radius: 100%;
+//     }
+//     .gmnoprint {
+//         top: -518px;
+//     }
+// }
+// // Maps Cutoms
+// .gmnoprint {
+//     margin: 10px;
+//     z-index: 0;
+//     position: absolute;
+//     cursor: pointer;
+//     left: 0px;
+//     top: -61px;
+// }
+// .img2{
+//     width: 100%;
+//     border-radius: 100%;
+//     height: -webkit-fill-available;
+// }
+// //ion-list {
+// //    --ion-background-color: none;
+// //}
+
+// .map {
+//     position: absolute;
+//     height: 100%;
+//     width: 100%;
+//     background-color: transparent;
+//     opacity: 0;
+//     transition: opacity 150ms ease-in;
+//   }
+
+//   .map.visible {
+//     opacity: 1;
+//   }
+//   .map::ng-deep {
+//     display: inline-block;
+//     width: 100%;
+//     height: 100%;
+//     div[class="gmnoprint"] {
+//         top: -200px;
+//     }
+//     button[draggable="false"] {
+//         height: 0px !important;
+//         width: 0px !important;
+//     }
+//     div[role="button"] {
+//         background-image: url("./../../assets/map-icon/markerTag.png");
+//         z-index: 10;
+//         background-size: 68px 97px;
+//         background-repeat: no-repeat;
+//         height: 118px !important;
+//         width: 300px !important;
+//         div[tabindex="-1"] {
+//             background-image: none;
+//             z-index: 10;
+//             background-size: 68px 97px;
+//             background-repeat: no-repeat;
+//             height: 118px !important;
+//             width: 300px !important;
+//         }
+//     }
+//     div[tabindex="-1"] {
+//         background-image: url("./../../assets/map-icon/markerTag.png");
+//         z-index: 10;
+//         background-size: 68px 97px;
+//         background-repeat: no-repeat;
+//         height: 118px !important;
+//         width: 300px !important;
+//     }
+//     div[role="button"].img {
+//         border-radius: 100%;
+//         img[draggable="false"] {
+//             border-radius: 100%;
+//         }
+//     }
+//     .gmnoprint {
+//         top: -518px;
+//     }
+// }
+
+// Fonts
+@font-face {
+  font-family: Posterman;
+  src: url(./../../assets/fonts/Sparkle.ttf);
+}
+ion-header {
+  background: var(--ion-color-light-tint);
+  ion-toolbar {
+    padding-top: 10px;
+    --background: var(--ion-color-primary);
+    height: 300px;
+    border-radius: 20px;
+    // border-bottom-right-radius: 20px;
+    ion-label {
+      color: white;
+      font-size: 20px;
+      margin: 12px;
+      font-weight: 800;
+    }
+    ion-buttons {
+      float: right;
+      ion-icon {
+        color: white;
+        font-size: 40px;
+      }
+    }
+    ion-card {
+      box-shadow: none;
+      margin: 15px;
+      --background: var(--ion-color-primary);
+      color: white;
+      h3 {
+        color: white;
+        font-weight: bold;
+      }
+      ion-card-title {
+        color: white;
+        font-family: Posterman;
+        font-size: 40px;
+      }
+      ion-card-subtitle {
+        color: white;
+        margin-top: 10px;
+        font-size: 12px;
+      }
+    }
+    ion-input {
+      height: 50px;
+      margin: 5px;
+      --padding-start: 10px;
+      --background: white;
+      border-radius: 10px;
+      color: black;
+      font-size: 13px;
+    }
+    .search-btn {
+      height: 50px;
+      --background: white;
+      float: right;
+      --background-hover: var(--ion-color-light);
+      --background-activated: var(--ion-color-light);
+      --background-focused: var(--ion-color-light);
+      --ripple-color: var(--ion-color-light);
+      ion-icon {
+        color: var(--ion-color-primary);
+      }
+    }
+  }
+}
+.ion-padding {
+  padding: 10px !important;
+}
+ion-content {
+  --background: var(--ion-color-light-tint);
+  ion-item {
+    --background: var(--ion-color-light-tint);
+  }
+  .blood-row {
+    ion-card {
+      text-align: center;
+      height: 80px;
+      width: 80px;
+      padding: 12px;
+      box-shadow: none;
+      border: 1px solid var(--ion-color-light-shade);
+      border-radius: 10px;
+      margin: 5px;
+    }
+    ion-card:hover {
+      text-align: center;
+      height: 80px;
+      width: 80px;
+      padding: 12px;
+      box-shadow: none;
+      border: 1px solid var(--ion-color-light-shade);
+      border-radius: 10px;
+      margin: 5px;
+      --background: var(--ion-color-light-tint);
+    }
+    ion-icon {
+      font-size: 40px;
+      color: var(--ion-color-primary);
+    }
+  }
+  .request-card {
+    box-shadow: none;
+    --background: white;
+    border-radius: 10px;
+    border: 1px solid var(--ion-color-light-shade);
+    padding: 25px;
+    height: 90px;
+    ion-card-title {
+      font-size: 20px;
+    }
+    .required-blood {
+      margin: 0px;
+      padding: 0px;
+      color: var(--ion-color-primary);
+    }
+    ion-chip {
+      float: right;
+      border-radius: 5px;
+    }
+  }
+  .request-card:hover {
+    box-shadow: none;
+    --background: var(--ion-color-light-tint);
+    border-radius: 10px;
+    border: 1px solid var(--ion-color-light-shade);
+    padding: 25px;
+    height: 90px;
+    .required-blood {
+      margin: 0px;
+      padding: 0px;
+      color: var(--ion-color-primary);
+    }
+    ion-chip {
+      float: right;
+      border-radius: 5px;
+    }
+  }
+}
+.request-campaign {
+  ion-card {
+    height: 100px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 10px;
+    --background: var(--ion-color-primary);
+    color: white;
+    border: 1px solid var(--ion-color-light-shade);
+    ion-icon {
+      font-size: 40px;
+    }
+    p {
+        font-size: 18px;
+        margin: 0px;
+    }
+  }
+}

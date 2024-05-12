@@ -1,0 +1,37 @@
+<ion-content>
+
+   <ion-list class="container">
+    <h3><b>Filter</b></h3>
+  
+    <h5><b>Social Range</b></h5>
+  
+    <div class="flex">
+      <ion-button class="filter_button" mode="ios" *ngFor="let data of btnRangeData" (click)="getactivitySocialRange(data.range)">{{data.range}}m</ion-button>
+      <!-- <ion-button class="filter_button" mode="ios">200m</ion-button>
+      <ion-button class="filter_button" mode="ios">300m</ion-button>
+      <ion-button class="filter_button" mode="ios">400m</ion-button>
+      <ion-button class="filter_button" mode="ios">500m</ion-button>
+      <ion-button class="filter_button" mode="ios">600m</ion-button> -->
+    </div>
+  
+    <div>
+      <ion-input placeholder="Manually Enter" type="number" (ionChange)="getactivity($event)"></ion-input>
+    </div>
+  
+    <h3><b>Date</b></h3>
+  
+    <div class="flex">
+      <ion-button class="filter_button" mode="ios" (click)="getcurrentDateActivity()">Most Recent</ion-button>
+      <ion-button class="filter_button" mode="ios" (click)="getOneWeekActivity()">This Week</ion-button>
+    </div>
+  
+    <div>
+      <p>Or manually select</p>
+      <ion-input type="date" (ionChange)="getactivitybyDate($event)"></ion-input>
+    </div>
+    <ion-button shape="round" expand="block" class="apply_filter" mode="ios" (click)="go_to_search()">Apply Filter</ion-button>
+     
+ 
+   </ion-list>
+
+</ion-content>

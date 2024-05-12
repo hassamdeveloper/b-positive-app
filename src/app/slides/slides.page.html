@@ -1,0 +1,25 @@
+<!-- Intro Slides -->
+<ion-content>
+
+  <ion-slides pager="true">
+
+    <ion-slide *ngFor="let data of slide_content">
+      <!-- slider image  -->
+      <div class="img_container">
+        <img src="{{this.data.img}}" />
+      </div>
+      <!-- Slider Title -->
+      <ion-card>
+        <div>
+          <h5>{{this.data.title}}</h5>
+          <p>{{this.data.sub_title}}</p>
+        </div>
+        <!-- slider button -->
+        <ion-button [routerLink]="['/location']">Continue</ion-button>
+      </ion-card>
+
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>

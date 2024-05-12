@@ -1,0 +1,103 @@
+ion-header {
+
+    ion-toolbar {
+
+        .head_align {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-button {
+            border-radius: 100%;
+            box-shadow: 2px 3px 5px 5px whitesmoke;
+            height: 33px;
+            width: 33px;
+            margin-left: 15px;
+        }
+
+        ion-icon {
+            margin-right: 15px;
+        }
+    }
+}
+
+
+
+ion-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    padding: 5px;
+
+    ion-col {
+        max-width: 382px !important;
+        min-height: 99px;
+        display: flex;
+        align-items: flex-start;
+        align-content: space-between;
+        justify-content: space-between;
+        margin: 0px 5px 27px 5px;
+        padding: 0;
+        box-shadow: 2px 4px 5px #00000029;
+        border-radius: 10px;
+
+        .user_img {
+            border: 2px solid #17A525;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            padding: 1px;
+            width: 50px;
+            height: 50px;
+            margin: 15px 0px 0px 5px;
+            .userimg{
+                height: 100%;
+                width: 100%;
+                border-radius: 14px;
+            }
+        }
+
+        .m-1 {
+            margin: 3.5px 3px;
+        }
+
+        .m-2 {
+            margin: 15px 0px 0px 5px;
+        }
+
+        .title {
+
+            font-size: 13px;
+        }
+
+        .subtitle {
+            font-size: 9px;
+        }
+
+        .short_des{
+            width: 215px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .location_img{
+            width: 86px;
+            height: 99px;
+            display: flex;
+
+            .a{
+                height: 100%;
+                width: 100%;    
+                object-fit: cover;
+                object-position: -52px 0px;
+                border-radius: 0px 10px 10px 0px;
+            }
+        }
+    }
+
+}

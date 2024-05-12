@@ -1,0 +1,83 @@
+<ion-header class="center">
+  <ion-toolbar mode="md">
+    <ion-title>Blood Requests</ion-title>
+  </ion-toolbar>
+  <!-- Segment -->
+  <ion-segment
+    color="light"
+    [(ngModel)]="selectTabs"
+    (ionChange)="getactivity()"
+  >
+    <ion-segment-button value="all">
+      <ion-label>All ({{totalRequests}})</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="my-campaign">
+      <ion-label>My Compaign ({{totalMyCampaigns}})</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="my-requests">
+      <ion-label>My Requests ({{totalCountMyRequests}})</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  <!-- Activities on going -->
+  <div *ngIf=" selectTabs ==  'all' ">
+    <ion-card (click)="openModal(request)" class="request-card center" *ngFor="let request of allRequests">
+      <ion-card-title
+        >{{request.description}}
+        <ion-chip color="primary">{{request.status}}</ion-chip></ion-card-title
+      >
+      <ion-card-subtitle
+        >Blood Required:
+        <span class="required-blood"
+          >{{request.blood_type}}</span
+        ></ion-card-subtitle
+      >
+    </ion-card>
+  </div>
+
+  <!-- Activities  may be going -->
+  <div *ngIf=" selectTabs ==  'my-campaign' ">
+    <ion-list class="donors-list" *ngFor="let donor of my_campaigns" >
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img src="{{donor.p_img}}" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{donor.name}}</h2>
+          <p>Adress: {{donor.location}}</p>
+          <h3>Blood Type: {{donor.blood_type}}</h3>
+        </ion-label>
+        <!-- <ion-buttons>
+          <ion-button>
+            <ion-icon name="location-outline"></ion-icon>
+          </ion-button>
+          <ion-button>
+            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons> -->
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Activities you created -->
+  <div *ngIf=" selectTabs ==  'my-requests' ">
+    <ion-card
+    (click)="openModal(request)"
+      class="request-card center"
+      *ngFor="let request of totalMyRequests"
+    >
+      <ion-card-title
+        >{{request.description}}
+        <ion-chip color="primary">{{request.status}}</ion-chip></ion-card-title
+      >
+      <ion-card-subtitle
+        >Blood Required:
+        <span class="required-blood"
+          >{{request.blood_type}}</span
+        ></ion-card-subtitle
+      >
+    </ion-card>
+  </div>
+</ion-content>

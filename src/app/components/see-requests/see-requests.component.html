@@ -1,0 +1,44 @@
+<ion-content
+  class="ion-padding center ion-justify-content-center ion-text-center"
+>
+  <h1>{{ Request.description }}</h1>
+  <p><b>Location:</b> {{ Request.location }}</p>
+  <ion-list>
+    <ion-chip color="danger">{{ Request.status }}</ion-chip>
+    <ion-chip color="success">{{ Request.city }}</ion-chip>
+    <ion-chip *ngIf="Request.status !== 'Donor'" color="danger"
+      >Blood Required: {{ Request.blood_type }}</ion-chip
+    >
+    <ion-chip *ngIf="Request.status == 'Donor'" color="danger"
+      >Available Blood: {{ Request.blood_type }}</ion-chip
+    >
+    <ion-chip color="secondary">Distance: {{ distance }}</ion-chip>
+  </ion-list>
+  <ion-list class="donors-list">
+    <ion-item lines="none">
+      <ion-thumbnail slot="start">
+        <img src="{{ Request.p_img }}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ Request.name }}</h2>
+        <p>Adress: {{ Request.location }}</p>
+        <h3>Blood Type: {{ Request.blood_type }}</h3>
+      </ion-label>
+      <ion-buttons>
+        <ion-button (click)="gotoMap()">
+          <ion-icon name="location-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="show_chat(Request)">
+          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+  <ion-button
+    style="height: 60px"
+    expand="block"
+    mode="ios"
+    (click)="show_chat(Request)"
+    >I WANT TO CHAT</ion-button
+  >
+</ion-content>

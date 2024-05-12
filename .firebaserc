@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bepositive-blood": {
+      "hosting": {
+        "app": [
+          "bpositive"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bepositive-blood"
+  }
+}

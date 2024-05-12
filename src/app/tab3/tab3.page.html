@@ -1,0 +1,45 @@
+<ion-header class="center">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+  <ion-card>
+    <ion-input placeholder="Search Donor" [(ngModel)]="search"></ion-input>
+  </ion-card>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label *ngIf="clearFilter">Filter</ion-label>
+      <ion-label *ngIf="!clearFilter">Clear Filter</ion-label>
+      <ion-buttons>
+        <ion-button *ngIf="clearFilter"  (click)="openModal('')">
+          <ion-icon name="filter"></ion-icon>
+        </ion-button>
+        <ion-button *ngIf="!clearFilter"  (click)="getFilteredData()">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+  <ion-list class="donors-list" *ngFor="let data of allFilterData | filter:search">
+    <ion-item lines="none">
+      <ion-thumbnail slot="start">
+        <img src="{{data.img}}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{data.name}}</h2>
+        <p>Adress: {{data.location}}</p>
+        <h3>Blood Type: {{data.blood}}</h3>
+      </ion-label>
+      <ion-buttons>
+        <ion-button (click)="show_chat(data)">
+          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

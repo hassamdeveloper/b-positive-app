@@ -1,0 +1,54 @@
+<ion-content>
+  <ion-row class="header">
+    <ion-col size="1.8">
+      <div class="back-button" (click)="close()"> 
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+      </div>
+    </ion-col>
+    <ion-col size="8.4">
+      <p class="text"><b>Profile</b></p>
+    </ion-col>
+    <!-- <ion-col size="1.8">
+      <p class="text" (click)="allow()"><b>Edit</b></p>
+    </ion-col> -->
+  </ion-row>
+
+   <!-- user image -->
+  <ion-avatar class="avatar">
+    <img src={{profile_data.img}} alt="">
+  </ion-avatar>
+
+
+  <!-- user name and Bio -->
+  <h1 class="name"><b>{{profile_data.name}}</b></h1>
+  <p class="text2">{{profile_data.bio}}</p>
+
+  <!-- social range -->
+  <ion-row class="range">
+    <ion-col size="8">
+      <p>Blood Type</p>
+    </ion-col>
+    <ion-col size="4" class="col2">
+      <!-- social range value -->
+      <p><b>{{profile_data.blood}}</b></p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="range">
+    <ion-col size="8">
+      <p>City</p>
+    </ion-col>
+    <ion-col size="4" class="col2">
+      <!-- social range value -->
+      <p><b>{{profile_data.city}}</b></p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="range">
+    <ion-col size="8">
+      <p>Gender</p>
+    </ion-col>
+    <ion-col size="4" class="col2">
+      <!-- social range value -->
+      <p><b>{{profile_data.gender}}</b></p>
+    </ion-col>
+  </ion-row>
+</ion-content>

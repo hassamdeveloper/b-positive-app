@@ -1,0 +1,171 @@
+<ion-header class="center">
+  <ion-toolbar mode="md">
+    <ion-buttons>
+      <ion-back-button><ion-icon name="arrow-back"></ion-icon></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item lines="none">
+      <ion-buttons slot="end">
+        <ion-button (click)="is_update()" color="primary">edit</ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="!update" style="text-align: center;">
+    <ion-avatar class="avatar">
+    <img src={{profile.img}}  alt="" />
+  </ion-avatar>
+  <h2>{{profile.name}}</h2>
+  <ion-label><ion-icon name="location"></ion-icon> Pakpattan</ion-label>
+  <ion-row style="background-color: white !important;" class="profile-row">
+    <ion-col size="4"><ion-card><b class="text">{{profile.blood}}</b> <p>Blood</p></ion-card></ion-col>
+    <ion-col size="4"><ion-card><b class="text">{{profile.age}}</b><p>Age</p></ion-card></ion-col>
+    <ion-col size="4"><ion-card>
+      <b class="text" *ngIf="profile.gender == 'male'">M</b>
+      <b class="text" *ngIf="profile.gender == 'female'">F</b>
+      <p>Gender</p></ion-card></ion-col>
+  </ion-row>
+  <ion-button mode="ios" (click)="logout()"><ion-icon name="log-out-outline"></ion-icon></ion-button>
+  </div>
+  <div *ngIf="update">
+    <ion-avatar class="avatar">
+    <img src="assets/blood-donor.png" id="cameraImage" alt="" />
+    <ion-buttons mode="ios">
+      <ion-button (click)="capture_img()">
+        <ion-icon class="" name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-avatar>
+  <!-- Name -->
+  <ion-row style="background-color: #f8f8f8; border-radius: 12px">
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="person"></ion-icon>
+    </ion-col>
+    <ion-col class="input-col" size="10">
+      <ion-input placeholder="Name" [(ngModel)]="profile.name"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row style="background-color: #f8f8f8; border-radius: 12px">
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="mail"></ion-icon>
+    </ion-col>
+    <ion-col class="input-col" size="10">
+      <ion-input
+        placeholder="Email"
+        [(ngModel)]="profile.email"
+      ></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row style="background-color: #f8f8f8; border-radius: 12px">
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="male"></ion-icon>
+    </ion-col>
+    <ion-col class="input-col" size="10">
+      <ion-select
+        mode="ios"
+        interface="action-sheet"
+        placeholder="Male"
+        [(ngModel)]="profile.gender"
+      >
+        <ion-select-option value="male">Male</ion-select-option>
+        <ion-select-option value="female">Female</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="call"></ion-icon>
+    </ion-col>
+    <ion-col class="input-col" size="10">
+      <ion-input
+        type="number"
+        placeholder="Phone"
+        [(ngModel)]="profile.phone"
+      ></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row style="background-color: #f8f8f8; border-radius: 12px">
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="man"></ion-icon>
+    </ion-col>
+    <ion-col class="input-col" size="10">
+      <ion-input
+        type="number"
+        placeholder="Age"
+        [(ngModel)]="profile.age"
+      ></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row style="background-color: #f8f8f8; border-radius: 12px">
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="water"></ion-icon>
+    </ion-col>
+    <ion-col class="input-col" size="10">
+      <ion-select
+        mode="ios"
+        interface="action-sheet"
+        placeholder="Blood Group"
+        [(ngModel)]="profile.blood"
+      >
+        <ion-select-option
+          value="{{group.type}}"
+          *ngFor="let group of blood_group"
+          >{{group.type}}</ion-select-option
+        >
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-row style="background-color: #f8f8f8; border-radius: 12px">
+    <ion-col class="icon-col" size="2">
+      <ion-icon name="location"></ion-icon>
+    </ion-col>
+    <ion-col (click)="open()" style="padding: none" class="input-col" size="10">
+      <ion-select
+        class="select-city"
+        disabled="true"
+        mode="ios"
+        interface="action-sheet"
+        placeholder="{{selectedCity}}"
+      >
+        <ion-select-option>Pakpattan</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-button
+    (click)="submit_profile_data()"
+    expand="block"
+    mode="ios"
+    >Submit</ion-button
+  >
+  <!-- Modal -->
+  <ion-modal (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Select City</ion-title>
+        </ion-toolbar>
+        <ion-searchbar
+          [debounce]="1000"
+          [(ngModel)]="search"
+          class="search"
+          placeholder="Search City"
+        ></ion-searchbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <!-- <ion-item *ngFor="let city of cities | filter:search"> -->
+        <ion-item *ngFor="let city of cities ">
+          <ion-label class="ion-text-wrap" for="terms">{{city.name}}</ion-label>
+          <ion-checkbox
+            mode="ios"
+            id="terms"
+            (ionChange)="onTermsChanged(city)"
+          ></ion-checkbox>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  </div>
+</ion-content>

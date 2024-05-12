@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="head_align">
+      
+      <div class="back-button" (click)="nav_back()">
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+      </div>
+      
+      <p class="text"><b>Notification</b></p>
+        <div (click)="funnel()">
+          <b><ion-icon name="funnel-outline"></ion-icon></b>
+        </div>
+
+    </div>
+
+  </ion-toolbar>
+
+</ion-header>
+ 
+<ion-content>
+  
+ <!-- Notification data -->
+ <ion-row>
+  <ion-col size="12" size-md="4" *ngFor="let data of notificationsActivity" (click)="show_details(data)">
+
+    <div class="user_img">
+      <img class="userimg" src="{{this.data.profile_img}}" alt="">
+    </div>
+
+    <div class="m-2">
+      <p class="title m-1"><b>{{this.data.activity_name}}</b></p>
+      <p class="subtitle short_des m-1">{{this.data.description}}</p>
+      <p class="subtitle m-1"><b>view it</b></p>
+    </div>
+
+    <div class="location_img">
+      <img class="a" src="{{this.data.a_image}}" alt="">
+    </div>
+
+  </ion-col>
+</ion-row>
+
+</ion-content>

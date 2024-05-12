@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      UserId2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- <ion-list *ngIf="messages$; else loading">
+    <ion-item *ngFor="let message of messages$ | async" [ngClass]="message.senderId === 'userId1'? 'my-bubble':'their-bubble'">
+      <ion-label>{{ message.message }}</ion-label>
+      <div slot="end" class="timestamp">{{ message.timestamp | date:'short' }}</div>
+    </ion-item>
+  </ion-list> -->
+  <!-- <div class="messages" *ngFor="let message of messages$ | async" [ngClass]="message.senderId === 'userId1'? 'mine':'yours'">
+    <div class="message last">
+      {{ message.message }}
+    </div>
+  </div> -->
+  <div *ngFor="let message of messages$ | async">
+  <div class="clear"></div>
+    <div class="from-them" class="messages"  [ngClass]="message.senderId === 'userId1'? 'from-me':'from-them'">
+      <p>{{ message.message }}</p>
+    </div>
+  </div>
+  <ng-template #loading>
+    <h1>loading...</h1>
+  </ng-template>
+</ion-content>
+<ion-footer>
+  <ion-input type="text" placeholder="Type your message" [(ngModel)]="chat" #messageInput></ion-input>
+  <ion-button type="submit" (click)="sendMessage($event)">Send</ion-button>
+</ion-footer>

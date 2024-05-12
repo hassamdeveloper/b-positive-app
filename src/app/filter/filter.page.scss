@@ -1,0 +1,35 @@
+.container{
+    margin: 20px 15px ;
+
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+ion-input{
+    min-width: 222px;
+    border: 1px solid rgb(127, 127, 127);
+    border-radius:6px;
+}
+.filter_button{
+    min-width: 110px;
+    --background: transparent ;
+    --background-activated: #F2910C;
+    --background-focused: #F2910C;
+    --background-hover:#F2910C;
+    border: 1px solid rgb(127, 127, 127);
+    margin: 0% auto 12px auto;
+    border-radius:6px;
+    text-transform: none;
+    --color-activated: white;
+}
+.apply_filter{
+    --background:var(--ion-color-secondary);
+    --background-activated: #F2910C;
+    --background-focused: #F2910C;
+    --background-hover:#F2910C;
+    margin: 20px auto;
+    text-transform: none;
+    --color:white;
+    --color-activated: white;
+}

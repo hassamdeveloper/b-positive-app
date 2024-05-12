@@ -1,0 +1,91 @@
+<ion-header>
+  <!-- header -->
+  <ion-list>
+    <ion-item lines="none">
+      <ion-avatar slot="start" class="back-button" (click)="go_back()">
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+      </ion-avatar>
+      <ion-avatar (click)="openProfile()">
+        <img src="{{userData.p_img}}" class="img" />
+      </ion-avatar>
+      <ion-label (click)="openProfile()">
+        <h2>{{userData.name}}</h2>
+        <!-- <p>{{chat.last_time}}</p> -->
+      </ion-label>
+      <ion-icon slot="end" name="ellipsis-vertical" size="large"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-header>
+<ion-content>
+  <div class="my-list" #scrollMe>
+    <!-- message area -->
+    <ion-grid>
+      <ion-row *ngFor="let message of messages">
+        <ion-col
+          size="9"
+          *ngIf="message.incoming_key == other"
+          class="message other-message"
+        >
+          <b>{{message.name}}</b><br />
+          <span>{{message.msg}}</span>
+          <div class="time" text-right>
+            <br />
+            {{message.date | date:'short'}}
+          </div>
+
+          <div class="other_img">
+            <img
+              src="{{message.img}}"
+              alt=""
+              onerror="this.onerror=null;this.src='assets/blood-donor.png';"
+            />
+          </div>
+        </ion-col>
+
+        <ion-col
+          offset="3"
+          size="9"
+          *ngIf="message.outgoing_key == other"
+          class="message my-message"
+        >
+          <b>{{message.name}}</b><br />
+          <span>{{message.msg}}</span>
+          <div class="time" text-right>
+            <br />
+            {{message.date | date:'short'}}
+          </div>
+          <div class="my_img">
+            <!-- user img -->
+            <img src="{{message.img}}" alt="" />
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="10">
+        <ion-textarea
+          placeholder="type text here"
+          class="message-input"
+          autoGrow="true"
+          rows="1"
+          [(ngModel)]="newMsg.msg"
+        ></ion-textarea>
+      </ion-col>
+      <ion-col size="2" class="ion-text-center">
+        <ion-button
+          fill="clear"
+          class="msg-btn"
+          [disabled]="newMsg.msg == ''"
+          (click)="sendMessage()"
+        >
+          <ion-icon slot="icon-only" name="send" color="primary"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

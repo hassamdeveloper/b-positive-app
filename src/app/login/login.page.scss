@@ -1,0 +1,32 @@
+ion-content {
+  --background: var(--ion-color-primary);
+  color: white;
+  text-align: center;
+  .logo {
+    margin-top: 100px;
+  }
+  h2 {
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+  }
+  p {
+    color: white;
+  }
+}
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+ion-button {
+  position: absolute;
+  bottom: 10px;
+  width: 95%;
+  margin: 10px;
+}
+.hadees-arabic {
+  font-size: 20px;
+  font-weight: 600;
+}

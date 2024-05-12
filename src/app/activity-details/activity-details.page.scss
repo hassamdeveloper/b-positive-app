@@ -1,0 +1,99 @@
+ion-header{
+  background: white;
+  --background: white;
+  ion-toolbar{
+    background: white;
+    --background: white;
+  }
+}
+.back-button{
+    border-radius: 100%;
+    box-shadow: 2px 3px 5px 5px whitesmoke;
+    height: 33px;
+    width: 33px;
+}
+.txt{
+    font-size: 18px;
+    margin: auto;
+}
+.image{
+    width: 100%;
+    height: 230px;
+    margin: 30px auto 0px auto;
+    box-shadow: 2px 2px 37px rgba(0, 0, 0, 0.215);
+}
+
+    .algin_left{
+        display: flex;
+    }
+.div2{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .para{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: small;
+    }
+    .div3{
+        font-size: smaller;
+        font-weight: bold;
+        padding: 0;
+    }
+  .coltime{
+    display: flex;
+  }
+      .div4{
+       display: flex;
+        // width: 37px;
+        // height: 43px;
+         width: 37px;
+        height: 46px;
+
+        background-color: #F2910C;
+        color: white;
+        border-radius: 8px;
+        font-size: 21px;
+        font-weight: bolder;
+        // background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='black' stroke-width='6' stroke-dasharray='100%2c45' stroke-dashoffset='92' stroke-linecap='square'/%3e%3c/svg%3e");
+        // border-radius: 10px;
+        // background-image: url(./../../assets/div_ouline.png);
+        justify-content: center;
+        align-items: center;
+        margin: 8px;
+    }
+
+
+
+
+}
+ion-button {
+    --background: #F2910C;
+    --border-radius: 100px;
+    height: 60px;
+    width: 150px;
+    padding-top: 20px;
+    color: white;
+    text-transform: none;
+    margin:0px auto 25px auto;
+}
+
+.fs-0{
+    width: 100%;
+    font-size: 12px;
+}
+.col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+ion-item{
+    --background: transparent;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

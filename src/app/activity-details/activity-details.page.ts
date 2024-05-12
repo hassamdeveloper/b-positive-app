@@ -61,9 +61,9 @@ async may_be_going(){
    }
 
   async checkAttendees(){
-   const t = this.data.a_id
-    console.log(t);
-  await this.apicall.api_ActivityStatus(t);
+   const x = this.data.a_id
+    console.log(x);
+  await this.apicall.api_ActivityStatus(x);
       this.route.navigate(['/tabs/canidates']);
    }
 
